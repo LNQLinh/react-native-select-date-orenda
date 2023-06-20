@@ -70,7 +70,7 @@ export interface SelectTimeProps {
  * Describe your component here
  */
 export const SelectTime = function SelectTime(props: SelectTimeProps) {
-  const { style, onHidePick, isVisiblePick, valuePicker, maxDate, minDate } = props
+  const { style,onPressValue, onHidePick, isVisiblePick, valuePicker, maxDate, minDate } = props
   const styles = Object.assign({}, $container, style)
   // const yearCurrent = new Date().getFullYear()
   // const monthCurrent = new Date().getMonth() + 1
@@ -147,7 +147,7 @@ export const SelectTime = function SelectTime(props: SelectTimeProps) {
             maxDate={utils.convertDigitInDate(maxDate)}
             onDayPress={(day:any) => {
               setMarkedDate(day.dateString)
-            //   onPressValue(utils.displayDatePicker(day.dateString))
+              onPressValue(utils.displayDatePicker(day.dateString))
               onHidePick()
             }}
             hideArrows={true}

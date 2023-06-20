@@ -1,34 +1,23 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { multiply,ModalSelectDate } from 'react-native-select-date-orenda';
+import { StyleSheet, View, Text,  } from 'react-native';
+import {  SelectTime } from 'react-native-select-date-orenda';
+import { utils } from '../../src/utils';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-  const [isVisible,setisVisible]= React.useState(false)
-  const date= "18/01/2023"
+  const [date,setDate]=React.useState( '18/01/2023')
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
-  console.log("---datte", date)
 
   return (
     <View style={styles.container}>
- <ModalSelectDate
-          isVisible={isVisible}
-          onBackDropPress={() => setisVisible(false)}
-          onPressDate={(value) => {
-            setisVisible(false)
-          }}
-          date={date}
-          minDate="31/12/2022"
-          maxDate="31/12/2030"
-        />
-<TouchableOpacity onPress={()=>setisVisible(true)}>
-<Text>Result: {result}</Text>
-
-</TouchableOpacity>
+      <SelectTime
+        valuePicker={date && utils.convertDigitInDate(date)}
+        isVisiblePick={true}
+        onHidePick={() => {}}
+        onPressValue={(date) => {
+          setDate(date)
+        }}
+      />
+        <Text>Result: {date}</Text>
     </View>
   );
 }

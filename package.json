@@ -40,7 +40,10 @@
     "ios",
     "android"
   ],
-  "repository": "https://github.com/LNQLinh/react-native-select-date-orenda",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LNQLinh/react-native-select-date-orenda.git"
+  },
   "author": "LNQLinh <linh.lnq167944@gmail.com> (https://github.com/LNQLinh)",
   "license": "MIT",
   "bugs": {
@@ -51,8 +54,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "^1.2.2",
     "@commitlint/config-conventional": "^17.0.2",
+    "@evilmartians/lefthook": "^1.2.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
@@ -155,5 +158,11 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-modal": "^13.0.1"
+  },
+  "directories": {
+    "example": "example"
   }
 }

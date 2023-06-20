@@ -147,7 +147,7 @@ export const SelectTime = function SelectTime(props: SelectTimeProps) {
             maxDate={utils.convertDigitInDate(maxDate)}
             onDayPress={(day:any) => {
               setMarkedDate(day.dateString)
-              onPressValue(utils.displayDatePicker(day.dateString))
+              onPressValue?.(utils.displayDatePicker(day.dateString))
               onHidePick()
             }}
             hideArrows={true}

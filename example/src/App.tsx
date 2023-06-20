@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { multiply } from 'react-native-select-date-orenda';
-import { SelectTime } from './select-time';
-import { utils } from './utils';
-import { ModalSelectDate } from './ModalSelectDate';
+import { multiply,ModalSelectDate } from 'react-native-select-date-orenda';
 
 export default function App() {
   const [result, setResult] = React.useState<number | undefined>();

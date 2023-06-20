@@ -1,7 +1,6 @@
 import * as React from "react"
-import { FlatList, StyleProp, TextStyle, TouchableOpacity, View, ViewStyle } from "react-native"
+import {  StyleProp, View, ViewStyle } from "react-native"
 import Modal from "react-native-modal"
-// import configs from "../../utils/configs"
 import { SelectTime } from "./select-time"
 import { utils } from "./utils"
 import { configs } from "./configs"
@@ -26,7 +25,6 @@ export interface ModalSelectDateProps {
 export const ModalSelectDate = function ModalOverview(props: ModalSelectDateProps) {
   const { style, isVisible, onBackDropPress, onPressDate, date, maxDate, minDate } = props
   const styles = Object.assign({}, $container, style)
-  const [showPicker, setShowpicker] = React.useState(false)
 
   return (
     <Modal
@@ -43,7 +41,7 @@ export const ModalSelectDate = function ModalOverview(props: ModalSelectDateProp
         <SelectTime
           valuePicker={date && utils.convertDigitInDate(date)}
           isVisiblePick={true}
-          onHidePick={() => setShowpicker(false)}
+          onHidePick={() => {}}
           onPressValue={(value) => onPressDate(value)}
           maxDate={maxDate}
           minDate={minDate}

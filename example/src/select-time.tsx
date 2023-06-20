@@ -152,9 +152,9 @@ export const SelectTime = function SelectTime(props: SelectTimeProps) {
             }}
             hideArrows={true}
             // monthFormat={"MM yyyy"}
-            onMonthChange={(month) => {}}
+            onMonthChange={() => {}}
             hideExtraDays={true}
-            renderHeader={(date) => {
+            renderHeader={() => {
               return <></>
             }}
             theme={{
@@ -168,11 +168,6 @@ export const SelectTime = function SelectTime(props: SelectTimeProps) {
               textDayFontSize: 16,
               monthTextColor: colors.neutral900,
             //   textMonthFontFamily: typography.familyBold,
-              "stylesheet.calendar.header": {
-                dayTextAtIndex0: {
-                  color: colors.error,
-                },
-              },
             }}
             markingType={"custom"}
             markedDates={{

@@ -57,8 +57,8 @@ export const ModalSelectYear = function ModalSelectYear(props: ModalSelectYearPr
         <FlatList
           showsVerticalScrollIndicator={false}
           data={listYear}
-          keyExtractor={(item, index) => `${index}`}
-          renderItem={({ item, index }) => (
+          keyExtractor={( index) => `${index}`}
+          renderItem={({ item }) => (
             <TouchableOpacity
               style={$btnYear}
               onPress={() => {

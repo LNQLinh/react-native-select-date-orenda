@@ -22,7 +22,6 @@ export default function App() {
           isVisible={isVisible}
           onBackDropPress={() => setisVisible(false)}
           onPressDate={(value) => {
-            console.log("---date", value)
             setisVisible(false)
           }}
           date={date}

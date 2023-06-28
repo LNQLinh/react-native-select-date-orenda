@@ -17,7 +17,7 @@ export default function App() {
           setDate(date)
         }}
       />
-        <Text>Result: {date}</Text>
+       
     </View>
   );
 }

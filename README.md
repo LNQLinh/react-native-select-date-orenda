@@ -16,24 +16,27 @@ yarn add react-native-select-date-orenda
 yarn add react-native-calendars 
 
 ```
+## Modal
+
+<img src="src/Image/demo.png" height="400px" style="margin-left:10px" />
+
 
 ## Usage
 
 ```js
-import { ModalSelectDate } from 'react-native-select-date-orenda';
+import {  SelectTime } from 'react-native-select-date-orenda';
+
 
 // ...
 
-    <ModalSelectDate
-        isVisible={isVisible}
-        onBackDropPress={() => setisVisible(false)}
-        onPressDate={(value) => {
-            setisVisible(false)
+   <SelectTime
+        valuePicker={date && utils.convertDigitInDate(date)}
+        isVisiblePick={true}
+        onHidePick={() => {}}
+        onPressValue={(date) => {
+          setDate(date)
         }}
-        date={date}
-        minDate="31/12/2022"
-        maxDate="31/12/2030"
-    />
+      />
 ```
 
 ## Contributing

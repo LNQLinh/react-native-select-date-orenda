@@ -26,7 +26,7 @@ yarn add react-native-calendars
 ```js
 import React, { useState } from 'react'
 import { Button } from 'react-native'
-import {  SelectTime,utils } from 'react-native-select-date-orenda';
+import {  SelectDate,utils } from 'react-native-select-date-orenda';
 
 export default function App() {
   const [date,setDate]=useState('18/01/2023')
@@ -34,7 +34,8 @@ export default function App() {
 
   return (
     <>
-      <SelectTime
+     
+      <SelectDate
         valuePicker={date && utils.convertDigitInDate(date)}
         isVisiblePick={isVisible}
         onPressValue={(date) => {
@@ -47,19 +48,20 @@ export default function App() {
     </>
   );
 }
+
 ```
 
 ## Props
 
 | Prop                    |    Type  | Description                                                                 |Required|
 |-------------------------|----------|-----------------------------------------------------------------------------|--------|
-|`valuePicker`            | string   | The currently selected date. <br/> Example: `18/01/2023`                    |  yes   |
-|`maxDate`                | string   |  Maximum selectable date.    <br/> Example: `24/01/2023`                    |no      |
-|`minDate`                | string   |  Minimum selectable date.    <br/> Example: `10/01/2023`                    |no      |
-|`hideYear`               | boolean  |  If true, hide select Year                                                  |no      |
-|`hideMonth`              | boolean  |  If true, hide select month                                                 |no      |
-|`isVisiblePick`          | boolean  |  Boolean indicating if modal should be open.                                |yes     |
-|`convertDigitInDate`     | function | convert date input.                                                         |no      |
+|`valuePicker`            | string   | The currently selected date. <br/> Example: `18/01/2023`                    |  Yes   |
+|`maxDate`                | string   |  Maximum selectable date.    <br/> Example: `24/01/2023`                    |No      |
+|`minDate`                | string   |  Minimum selectable date.    <br/> Example: `10/01/2023`                    |No      |
+|`hideYear`               | boolean  |  If true, hide select Year                                                  |No      |
+|`hideMonth`              | boolean  |  If true, hide select month                                                 |No      |
+|`isVisiblePick`          | boolean  |  Boolean indicating if modal should be open.                                |Yes     |
+|`convertDigitInDate`     | function | convert date input.                                                         |No      |
 
 
 

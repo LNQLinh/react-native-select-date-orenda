@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from 'react-native'
-import {  SelectTime,utils } from 'react-native-select-date-orenda';
+import {  SelectDate,utils } from 'react-native-select-date-orenda';
 
 export default function App() {
   const [date,setDate]=useState('18/01/2023')
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
      
-      <SelectTime
+      <SelectDate
         valuePicker={date && utils.convertDigitInDate(date)}
         isVisiblePick={isVisible}
         onPressValue={(date) => {

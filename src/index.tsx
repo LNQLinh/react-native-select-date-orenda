@@ -1,2 +1,2 @@
-export  {SelectTime} from "./select-time"
+export  {SelectDate} from "./select-date"
 export  {utils} from "./utils"

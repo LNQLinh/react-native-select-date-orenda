@@ -76,7 +76,7 @@ const $textMonth: TextStyle = {
   color: colors.gray800,
   fontSize: 15,
 };
-export interface SelectTimeProps {
+export interface SelectDateProps {
   /**
    * An optional style override useful for padding & margin.
    */
@@ -92,7 +92,7 @@ export interface SelectTimeProps {
 /**
  * Describe your component here
  */
-export const SelectTime = function SelectTime(props: SelectTimeProps) {
+export const SelectDate = function SelectDate(props: SelectDateProps) {
   const {
     style,
     onPressValue,

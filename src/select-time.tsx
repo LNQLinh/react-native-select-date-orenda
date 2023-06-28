@@ -83,7 +83,6 @@ export interface SelectTimeProps {
   style?: StyleProp<ViewStyle>;
   valuePicker: any;
   isVisiblePick: boolean;
-  onHidePick: () => void;
   onPressValue?: (value: any) => void;
   maxDate?: any;
   minDate?: any;
@@ -97,7 +96,6 @@ export const SelectTime = function SelectTime(props: SelectTimeProps) {
   const {
     style,
     onPressValue,
-    onHidePick,
     isVisiblePick,
     valuePicker,
     maxDate,
@@ -116,6 +114,7 @@ export const SelectTime = function SelectTime(props: SelectTimeProps) {
   const [markedDate, setMarkedDate] = React.useState(
     utils.convertDigitInDate(new Date().toLocaleDateString())
   );
+    
 
   React.useEffect(() => {
     if (isVisiblePick) {
@@ -183,7 +182,6 @@ export const SelectTime = function SelectTime(props: SelectTimeProps) {
             onDayPress={(day: any) => {
               setMarkedDate(day.dateString);
               onPressValue?.(utils.displayDatePicker(day.dateString));
-              onHidePick();
             }}
             hideArrows={true}
             // monthFormat={"MM yyyy"}

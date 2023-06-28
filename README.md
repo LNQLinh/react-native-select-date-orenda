@@ -24,20 +24,46 @@ yarn add react-native-calendars
 ## Usage
 
 ```js
-import {  SelectTime } from 'react-native-select-date-orenda';
+import React, { useState } from 'react'
+import { Button } from 'react-native'
+import {  SelectTime,utils } from 'react-native-select-date-orenda';
 
+export default function App() {
+  const [date,setDate]=useState('18/01/2023')
+  const [isVisible, setIsVisible] = useState(false)
 
-// ...
-
-   <SelectTime
+  return (
+    <>
+      <SelectTime
         valuePicker={date && utils.convertDigitInDate(date)}
-        isVisiblePick={true}
-        onHidePick={() => {}}
+        isVisiblePick={isVisible}
         onPressValue={(date) => {
           setDate(date)
         }}
       />
+      <Button title="Open" onPress={() => setIsVisible(true)} />
+      <Button title="Close" onPress={() => setIsVisible(false)} />
+       
+    </>
+  );
+}
 ```
+
+## Props
+
+| Prop                    |    Type  | Description                                                                 |
+|-------------------------|----------|-----------------------------------------------------------------------------|
+|`valuePicker`            | string   | The currently selected date. <br/> Example: `18/01/2023`                    |
+|`maxDate`                | string   |  Maximum selectable date.    <br/> Example: `24/01/2023`                    |
+|`minDate`                | string   |  Minimum selectable date.    <br/> Example: `10/01/2023`                    |
+|`hideYear`               | boolean  |  If true, hide select Year                                                  |
+|`hideMonth`              | boolean  |  If true, hide select month                                                 |
+|`isVisiblePick`          | boolean  |  Boolean indicating if modal should be open.                                |
+|`convertDigitInDate`     | function | convert date input.                                                         |
+
+
+
+
 
 ## Contributing
 

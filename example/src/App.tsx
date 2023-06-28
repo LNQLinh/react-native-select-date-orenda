@@ -1,36 +1,25 @@
-import * as React from 'react';
-import { StyleSheet, View, Text,  } from 'react-native';
-import {  SelectTime } from 'react-native-select-date-orenda';
-import { utils } from '../../src/utils';
+import React, { useState } from 'react'
+import { Button } from 'react-native'
+import {  SelectTime,utils } from 'react-native-select-date-orenda';
 
 export default function App() {
-  const [date,setDate]=React.useState( '18/01/2023')
-
+  const [date,setDate]=useState('18/01/2023')
+  const [isVisible, setIsVisible] = useState(false)
 
   return (
-    <View style={styles.container}>
+    <>
+     
       <SelectTime
         valuePicker={date && utils.convertDigitInDate(date)}
-        isVisiblePick={true}
-        onHidePick={() => {}}
+        isVisiblePick={isVisible}
         onPressValue={(date) => {
           setDate(date)
         }}
       />
+      <Button title="Open" onPress={() => setIsVisible(true)} />
+      <Button title="Close" onPress={() => setIsVisible(false)} />
        
-    </View>
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});

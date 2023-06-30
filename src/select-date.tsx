@@ -205,11 +205,6 @@ export const SelectDate = function SelectDate(props: SelectDateProps) {
               textDayStyle: { fontWeight: '400' },
               textDayFontSize: 16,
               monthTextColor: colors.neutral900,
-              "stylesheet.calendar.header": {
-                dayTextAtIndex6: {
-                  color: colors.error,
-                },
-              },
             }}
             markingType={'custom'}
             markedDates={{

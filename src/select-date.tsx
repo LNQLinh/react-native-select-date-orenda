@@ -145,8 +145,12 @@ export const SelectDate = function SelectDate(props: SelectDateProps) {
           />
           <View style={$warp_picker}>
             {!hideYear && (
-              <TouchableOpacity onPress={() => setIsvisibleYear(true)}>
+              <TouchableOpacity onPress={() => setIsvisibleYear(true)} style={{flexDirection:'row',alignItems:"center"}} >
                 <Text style={$textYear}>Năm {year}</Text>
+                <Image
+                    style={[$imageStyle]}
+                    source={require('./Image/chevron-down-small.png')}
+                  />
               </TouchableOpacity>
             )}
             <View style={{ flex: 1 }} />
@@ -176,6 +180,8 @@ export const SelectDate = function SelectDate(props: SelectDateProps) {
             )}
           </View>
           <Calendar
+            key={"vn"}
+            firstDay={1}
             initialDate={`${year}-${utils.zeroPad(month, 2)}-01`}
             minDate={utils.convertDigitInDate(minDate) || '1900-01-01'}
             maxDate={utils.convertDigitInDate(maxDate)}
@@ -194,19 +200,24 @@ export const SelectDate = function SelectDate(props: SelectDateProps) {
               textSectionTitleColor: colors.neutral400,
               textSectionTitleDisabledColor: '#d9e1e8',
               dayTextColor: colors.gray700,
-              todayTextColor: '#00948A',
+              todayTextColor: '#2C90EC',
               todayButtonFontWeight: '600',
               textDayStyle: { fontWeight: '400' },
               textDayFontSize: 16,
               monthTextColor: colors.neutral900,
+              "stylesheet.calendar.header": {
+                dayTextAtIndex6: {
+                  color: colors.error,
+                },
+              },
             }}
             markingType={'custom'}
             markedDates={{
               [markedDate]: {
                 selected: true,
                 disableTouchEvent: true,
-                selectedColor: '#E8F8F5',
-                selectedTextColor: '#00948A',
+                selectedColor: '#E3F1FC',
+                selectedTextColor: "#2C90EC",
                 customTextStyle: { fontWeight: '600' },
               },
             }}
